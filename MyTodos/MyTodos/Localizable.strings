@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  MyTodos
+
+  Created by iOS developer on 5/6/15.
+  Copyright (c) 2015 Chocodrilo INC. All rights reserved.
+*/
+
+//TAB BAR VALUES
+
+"TAB_BAR_PENDING_TODOS_TITLE" = "Pending";
+"TAB_BAR_COMPLETED_TODOS_TITLE" = "Completed";
+
+//TITLE LABEL VALUES
+
+"LABEL_NO_PENDING_TODOS_TITLE" = "No Pending Todos Available!";
+"LABEL_PENDING_TODOS_TITLE" = "%i Pending Todos";
+"LABEL_NO_COMPLETED_TODOS_TITLE" = "No Completed Todos Available!";
+"LABEL_COMPLETED_TODOS_TITLE" = "%i Completed Todos";
+
+// TODO FORM LABEL VALUES
+
+"LABEL_TODO_DESCRIPTION_TITLE" = "Description:";
+"LABEL_LAST_UPDATE_TITLE" = "Last Update:";
+"LABEL_SELECT_IMAGE_TITLE" = "Select Image:";
+
+
+// BUTTON TITLE VALUES
+
+"BUTTON_SAVE_TODO_TITLE" = "Save";

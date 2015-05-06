@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Chocodrilo INC. All rights reserved.
 //
 #import "SQLiteDataSource.h"
+#import "FMDatabase.h"
+#import "FMDatabaseQueue.h"
 
 @implementation SQLiteDataSource
 
@@ -20,7 +22,7 @@
         [self createAndCheckDatabase];
         NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentDir = [documentPaths objectAtIndex:0];
-        dbPath = [documentDir stringByAppendingPathComponent:@"Promexico.db"];
+        dbPath = [documentDir stringByAppendingPathComponent:@"MyTodos.db"];
         insertDateTimeFormatter = [[NSDateFormatter alloc] init];
         [insertDateTimeFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         [insertDateTimeFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"es_ES"]];
@@ -276,10 +278,10 @@
     BOOL success;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *databasePathFromApp = [[[NSBundle mainBundle] resourcePath]
-                                     stringByAppendingPathComponent:@"Promexico.db"];
+                                     stringByAppendingPathComponent:@"MyTodos.db"];
     NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDir = [documentPaths objectAtIndex:0];
-    NSString* destinationPath = [documentDir stringByAppendingPathComponent:@"Promexico.db"];
+    NSString* destinationPath = [documentDir stringByAppendingPathComponent:@"MyTodos.db"];
     success = [fileManager fileExistsAtPath:destinationPath];
     if(!success)
     {

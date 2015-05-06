@@ -8,9 +8,6 @@
 
 
 #import <Foundation/Foundation.h>
-#import "FMDatabase.h"
-#import "FMDatabaseQueue.h"
-#import "DatabaseConstants.m"
 
 @interface SQLiteDataSource : NSObject
 {

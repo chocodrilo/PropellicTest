@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CompletedTodosViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    PendingTodosViewController *pendingController = [[PendingTodosViewController alloc] initWithNibName:@"PendingTodosViewController" bundle:nil];
+    pendingController.title = NSLocalizedString(@"TAB_BAR_PENDING_TODOS_TITLE", nil);
+    
+    CompletedTodosViewController *completedController = [[CompletedTodosViewController alloc] initWithNibName:@"CompletedTodosViewController" bundle:nil];
+    completedController.title = NSLocalizedString(@"TAB_BAR_COMPLETED_TODOS_TITLE", nil);
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = [NSArray arrayWithObjects:pendingController,completedController, nil];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = tabBarController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -7,3 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+
+// Attribute Keys
+NSString *const kTodoIdKey = @"id";
+NSString *const kTodoDescritionKey = @"todoDescription";
+NSString *const kTodoLastUpdateKey = @"todoLastUpdatedDate";
+NSString *const kTodoStatusKey = @"todoStatus";
+NSString *const kTodoImageKey = @"todoImage";
+
+// Values
+NSInteger const kTodoPendingStatusValue = 1;
+NSInteger const kTodoCompletedStatusValue = 2;
