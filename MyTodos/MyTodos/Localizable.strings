@@ -17,6 +17,7 @@
 "LABEL_PENDING_TODOS_TITLE" = "%i Pending Todos";
 "LABEL_NO_COMPLETED_TODOS_TITLE" = "No Completed Todos Available!";
 "LABEL_COMPLETED_TODOS_TITLE" = "%i Completed Todos";
+"LABEL_UPDATED_DATE_CELL_TITLE" = "Last Update: %@";
 
 // TODO FORM LABEL VALUES
 
@@ -28,3 +29,32 @@
 // BUTTON TITLE VALUES
 
 "BUTTON_SAVE_TODO_TITLE" = "Save";
+"BUTTON_USE_CAMERA_TITLE" = "Take a Photo";
+"BUTTON_USE_LIBRARY_TITLE" = "Select from Library";
+"BUTTON_OK_TITLE" = "OK";
+"BUTTON_SHARE_TITLE" = "Share";
+"BUTTON_EDIT_TITLE" = "Edit";
+"BUTTON_FINISH_TITLE" = "Finish";
+"BUTTON_DELETE_TITLE" = "Delete";
+"BUTTON_SHARE_EMAIL_TITLE" = "Email";
+"BUTTON_SHARE_TWITTER_TITLE" = "Twitter";
+"BUTTON_SHARE_FACEBOOK_TITLE" = "Facebook";
+
+// ACTION SHEET VALUES
+
+"ACTION_SHEET_SELECT_MEDIA_TYPE_TITLE" = "Select Media";
+"ACTION_SHEET_SELECT_MEDIA_TYPE_SUBTITLE" = "Please select the source of your photo";
+"ACTION_SHEET_SELECT_SHARE_TYPE_TITLE" = "Select Share method";
+"ACTION_SHEET_SELECT_SHARE_TYPE_SUBTITLE" = "Please select how you want to share this todo";
+
+// ALERT VALUES
+
+"ALERT_ERROR_TITLE" = "Error";
+"ALERT_NO_DESCRIPTION_SUBTITLE" = "Please enter a non-empty description to save the todo";
+"ALERT_NO_SHARE_OPTIONS_SUBTITLE" = "There are no share options available!";
+
+// SHARE VALUES
+
+"SHARE_EMAIL_SUBJECT_LABEL" = "Todo by MyTodos!";
+"SHARE_EMAIL_BODY_LABEL" = "Here is a Todo for You: %@";
+"SHARE_SOCIAL_NETWORK_BODY_LABEL" = "Todo: %@";

@@ -7,9 +7,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PendingTodosViewController">
             <connections>
                 <outlet property="addButton" destination="YOt-C0-woi" id="jAF-9G-Uj0"/>
+                <outlet property="closeImageButton" destination="WUC-ZO-y5p" id="qIW-DA-d2S"/>
                 <outlet property="closeTodoFormButton" destination="3p3-7z-rsh" id="1JC-5O-LJJ"/>
                 <outlet property="descriptionTextView" destination="Ebg-A6-i3I" id="0o5-Mb-y53"/>
                 <outlet property="descriptionTitleLabel" destination="YOf-48-qct" id="21x-Us-FHE"/>
+                <outlet property="enlargeImageImageView" destination="Sye-Qw-AhN" id="cN5-4x-bL9"/>
+                <outlet property="enlargeImageOverlayView" destination="hvo-A2-VJs" id="vnX-jL-CwT"/>
+                <outlet property="enlargeImageView" destination="9WR-y2-kIO" id="fdE-3c-Ipu"/>
                 <outlet property="lastUpdatedTitleLabel" destination="O7S-A0-gH2" id="Cd9-j7-Tj4"/>
                 <outlet property="lastUpdatedValueLabel" destination="dtz-qy-hSF" id="E3U-bf-0h5"/>
                 <outlet property="saveButton" destination="Yg1-aV-qPj" id="rjl-QL-ZQa"/>
@@ -32,9 +36,13 @@
                     <rect key="frame" x="0.0" y="90" width="329" height="478"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Zr1-oJ-Qmc"/>
+                        <outlet property="delegate" destination="-1" id="ZPS-g4-w4z"/>
+                    </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YOt-C0-woi">
-                    <rect key="frame" x="274" y="33" width="30" height="30"/>
+                    <rect key="frame" x="274" y="31" width="38" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="34"/>
@@ -126,10 +134,14 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nme-76-oec">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nme-76-oec">
                             <rect key="frame" x="224" y="216" width="72" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.74509803919999995" green="0.20392156859999999" blue="0.066666666669999999" alpha="1" colorSpace="deviceRGB"/>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="iOx-fV-LZd" appends="YES" id="wtg-YS-vhu"/>
+                            </connections>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yg1-aV-qPj">
                             <rect key="frame" x="86" y="302" width="133" height="43"/>
@@ -139,6 +151,9 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="saveTodo:" destination="-1" eventType="touchUpInside" id="916-7x-j4T"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,6 +175,52 @@
         <tapGestureRecognizer id="cuh-4j-jVv">
             <connections>
                 <action selector="dismissTextView:" destination="-1" id="sZf-6n-K1X"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="iOx-fV-LZd">
+            <connections>
+                <action selector="changeImage:" destination="-1" id="btC-wO-pjL"/>
+            </connections>
+        </tapGestureRecognizer>
+        <view contentMode="scaleToFill" id="9WR-y2-kIO">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.60000002384185791" contentMode="scaleToFill" id="hvo-A2-VJs">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="vhh-jE-xCi" appends="YES" id="gee-xR-jGW"/>
+                    </connections>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Sye-Qw-AhN">
+                    <rect key="frame" x="8" y="45" width="304" height="460"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WUC-ZO-y5p">
+                    <rect key="frame" x="272" y="57" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <state key="normal" title="X">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissTodoView:" destination="-1" eventType="touchUpInside" id="rls-aV-vt5"/>
+                        <action selector="hideImageView:" destination="-1" eventType="touchUpInside" id="BVY-nr-8uT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="563" y="1098"/>
+        </view>
+        <tapGestureRecognizer id="vhh-jE-xCi">
+            <connections>
+                <action selector="hideImageView:" destination="-1" id="ksC-Nn-a3p"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

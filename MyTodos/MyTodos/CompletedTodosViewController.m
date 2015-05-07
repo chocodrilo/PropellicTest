@@ -15,7 +15,7 @@
 @implementation CompletedTodosViewController
 
 #pragma mark
-#pragma mark Private method overrid
+#pragma mark Private method overrides
 
 -(void)setupTodosArray
 {
@@ -37,6 +37,27 @@
         titleLabel.textColor = [UIColor redColor];
     }
     [todosTableView reloadData];
+}
+
+-(NSArray *)getRightUtilityButtons
+{
+    NSMutableArray *utilityButtons = [NSMutableArray new];
+    
+    [utilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0]
+                                           title:NSLocalizedString(@"BUTTON_DELETE_TITLE", nil)];
+    return utilityButtons;
+}
+
+#pragma mark -
+#pragma mark SWCellDelegate
+
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index;
+{
+    [cell hideUtilityButtonsAnimated:YES];
+    TodoTableViewCell *c = (TodoTableViewCell *)cell;
+    NSDictionary *data = c.cellData;
+    [self deleteTodo:data];
 }
 
 @end
